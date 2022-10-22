@@ -7,18 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E16F5152901437B00B1D1CA /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16F5142901437B00B1D1CA /* ItemRow.swift */; };
 		0E9E6FFA28FEE99600ABEC49 /* AutoshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E6FF928FEE99600ABEC49 /* AutoshopApp.swift */; };
 		0E9E6FFC28FEE99600ABEC49 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E6FFB28FEE99600ABEC49 /* ContentView.swift */; };
 		0E9E6FFE28FEE99700ABEC49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9E6FFD28FEE99700ABEC49 /* Assets.xcassets */; };
 		0E9E700128FEE99700ABEC49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9E700028FEE99700ABEC49 /* Preview Assets.xcassets */; };
+		0E9E700928FEE9F500ABEC49 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E700828FEE9F500ABEC49 /* MainView.swift */; };
+		0E9E700C28FEEA4600ABEC49 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E700A28FEEA4600ABEC49 /* ProductsView.swift */; };
+		0E9E700D28FEEA4600ABEC49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E700B28FEEA4600ABEC49 /* HomeView.swift */; };
+		0E9E701328FEEBB700ABEC49 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E701128FEEBB700ABEC49 /* HomeModel.swift */; };
+		0E9E701428FEEBB700ABEC49 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E701228FEEBB700ABEC49 /* CategoryModel.swift */; };
+		0E9E701828FEED6400ABEC49 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E701728FEED6400ABEC49 /* Product.swift */; };
+		0E9E701B28FEEE5C00ABEC49 /* ProductCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E701A28FEEE5C00ABEC49 /* ProductCategoryViewModel.swift */; };
+		0E9E701D28FEEF4000ABEC49 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E701C28FEEF4000ABEC49 /* Service.swift */; };
+		0E9E701F28FEF55500ABEC49 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E701E28FEF55500ABEC49 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E16F5132901387400B1D1CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0E16F5142901437B00B1D1CA /* ItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		0E9E6FF628FEE99600ABEC49 /* Autoshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autoshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9E6FF928FEE99600ABEC49 /* AutoshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoshopApp.swift; sourceTree = "<group>"; };
 		0E9E6FFB28FEE99600ABEC49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E9E6FFD28FEE99700ABEC49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E9E700028FEE99700ABEC49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E9E700828FEE9F500ABEC49 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0E9E700A28FEEA4600ABEC49 /* ProductsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		0E9E700B28FEEA4600ABEC49 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0E9E701128FEEBB700ABEC49 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		0E9E701228FEEBB700ABEC49 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		0E9E701728FEED6400ABEC49 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		0E9E701A28FEEE5C00ABEC49 /* ProductCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryViewModel.swift; sourceTree = "<group>"; };
+		0E9E701C28FEEF4000ABEC49 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		0E9E701E28FEF55500ABEC49 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +72,13 @@
 		0E9E6FF828FEE99600ABEC49 /* Autoshop */ = {
 			isa = PBXGroup;
 			children = (
+				0E16F5132901387400B1D1CA /* Info.plist */,
 				0E9E6FF928FEE99600ABEC49 /* AutoshopApp.swift */,
-				0E9E6FFB28FEE99600ABEC49 /* ContentView.swift */,
+				0E9E701C28FEEF4000ABEC49 /* Service.swift */,
+				0E9E701E28FEF55500ABEC49 /* Helper.swift */,
+				0E9E701028FEEBA500ABEC49 /* Models */,
+				0E9E701928FEEE3B00ABEC49 /* ViewModel */,
+				0E9E700728FEE9E200ABEC49 /* Views */,
 				0E9E6FFD28FEE99700ABEC49 /* Assets.xcassets */,
 				0E9E6FFF28FEE99700ABEC49 /* Preview Content */,
 			);
@@ -65,6 +91,36 @@
 				0E9E700028FEE99700ABEC49 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0E9E700728FEE9E200ABEC49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E9E6FFB28FEE99600ABEC49 /* ContentView.swift */,
+				0E9E700828FEE9F500ABEC49 /* MainView.swift */,
+				0E9E700B28FEEA4600ABEC49 /* HomeView.swift */,
+				0E9E700A28FEEA4600ABEC49 /* ProductsView.swift */,
+				0E16F5142901437B00B1D1CA /* ItemRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0E9E701028FEEBA500ABEC49 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E9E701228FEEBB700ABEC49 /* CategoryModel.swift */,
+				0E9E701128FEEBB700ABEC49 /* HomeModel.swift */,
+				0E9E701728FEED6400ABEC49 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0E9E701928FEEE3B00ABEC49 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E9E701A28FEEE5C00ABEC49 /* ProductCategoryViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +193,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9E701F28FEF55500ABEC49 /* Helper.swift in Sources */,
+				0E9E700C28FEEA4600ABEC49 /* ProductsView.swift in Sources */,
+				0E9E701828FEED6400ABEC49 /* Product.swift in Sources */,
+				0E16F5152901437B00B1D1CA /* ItemRow.swift in Sources */,
 				0E9E6FFC28FEE99600ABEC49 /* ContentView.swift in Sources */,
+				0E9E701328FEEBB700ABEC49 /* HomeModel.swift in Sources */,
+				0E9E700928FEE9F500ABEC49 /* MainView.swift in Sources */,
+				0E9E701428FEEBB700ABEC49 /* CategoryModel.swift in Sources */,
+				0E9E700D28FEEA4600ABEC49 /* HomeView.swift in Sources */,
+				0E9E701D28FEEF4000ABEC49 /* Service.swift in Sources */,
+				0E9E701B28FEEE5C00ABEC49 /* ProductCategoryViewModel.swift in Sources */,
 				0E9E6FFA28FEE99600ABEC49 /* AutoshopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +336,7 @@
 				DEVELOPMENT_TEAM = 4R63NR5AKC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Autoshop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +366,7 @@
 				DEVELOPMENT_TEAM = 4R63NR5AKC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Autoshop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
