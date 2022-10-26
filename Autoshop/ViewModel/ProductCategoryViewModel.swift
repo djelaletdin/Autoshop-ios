@@ -11,33 +11,7 @@ class ProductCategoryViewModel: ObservableObject {
     
     @Published var categories: [ProductCategoryData] = []
     @Published var isSearching = false
-    
-    enum AlbumsFetcherError: Error {
-         case invalidURL
-         case missingData
-     }
-    
-//    func fetchData(){
-//        Service.shared.fetchProductCategories { (rawData, error) in
-//
-//            print("data is being fetched")
-//
-//            if let error = error{
-//                // TODO: - Show error to the user
-//                print("error while fetching app groups", error)
-//                return
-//
-//            }
-//            if let data = rawData{
-//                print("sup")
-//                DispatchQueue.main.async {
-//                    self.categories = data
-//                    print(self.categories)
-//                }
-//            }
-//        }
-//    }
-    
+
     @MainActor
     func initFetchData() async {
         isSearching = true
@@ -51,7 +25,6 @@ class ProductCategoryViewModel: ObservableObject {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let result = try JSONDecoder().decode([ProductCategoryData].self, from: data)
-            print(result)
             return result
         }
         catch {

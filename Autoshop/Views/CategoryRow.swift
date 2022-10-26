@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemRow: View {
+struct CategoryRow: View {
 
     let colors: [String: Color] = ["D": .purple, "G": .black, "N": .red, "S": .blue, "V": .green]
     let item: ProductCategoryData
@@ -43,8 +43,8 @@ struct ItemRow: View {
     }
 }
 
-struct ItemRow_Previews: PreviewProvider {
+struct CategoryRow_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRow(item: ProductCategoryData(id: 1, name: "asdasd", image: "asdasd", amount: 12))
+        CategoryRow(item: ProductCategoryData(id: 1, name: "asdasd", image: "asdasd", amount: 12))
     }
 }

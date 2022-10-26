@@ -1,37 +1,35 @@
 //
 //  ProductsView.swift
-//  Smart Shoplist
+//  Autoshop
 //
-//  Created by Didar Jelaletdinov on 2022/10/18.
+//  Created by Didar Jelaletdinov on 2022/10/26.
 //
 
 import SwiftUI
 
 struct ProductsView: View {
     
-    @StateObject var viewModel = ProductCategoryViewModel()
+    let category: ProductCategoryData
+    @StateObject var viewModel = ProductsViewModel()
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(viewModel.categories) { category in
-                    NavigationLink(destination: Text(category.name)) {
-                        ItemRow(item: category)
-                    }
-                }
+        List {
+            ForEach(viewModel.products) { product in
+                Text(product.name)
             }
-            .navigationTitle("Categories")
-            .task {
-                await viewModel.initFetchData()
-            }.refreshable {
-                await viewModel.initFetchData()
-            }
+        }
+        .navigationTitle(category.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await viewModel.initFetchData(category.id)
+        }.refreshable {
+            await viewModel.initFetchData(category.id)
         }
     }
 }
 
 struct ProductsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsView()
+        CategoriesView()
     }
 }
