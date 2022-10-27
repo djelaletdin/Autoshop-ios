@@ -7,13 +7,17 @@
 
 import Foundation
 
+
 class ProductsViewModel: ObservableObject {
     
     @Published var products: [ProductModel] = []
     @Published var isSearching = false
+    @Published var showingFavs = false
+    @Published var savedItems: Set<Int> = []
 
     @MainActor
     func initFetchData(_ id: Int) async {
+        self.savedItems = db.load()
         isSearching = true
         products = await fetchData(id)
         isSearching = false
@@ -34,4 +38,34 @@ class ProductsViewModel: ObservableObject {
         }
         
     }
+    
+    var filteredItems: [ProductModel]  {
+        if showingFavs {
+            return products.filter { savedItems.contains($0.id) }
+        }
+        return products
+    }
+    
+    private var db = Database()
+    
+//    func sortFavs() {
+//        withAnimation() {
+//            showingFavs.toggle()
+//        }
+//    }
+    
+    func contains(_ item: ProductModel) -> Bool {
+            savedItems.contains(item.id)
+        }
+    
+    // Toggle saved items
+    func toggleFav(item: ProductModel) {
+        if contains(item) {
+            savedItems.remove(item.id)
+        } else {
+            savedItems.insert(item.id)
+        }
+        db.save(items: savedItems)
+    }
+    
 }

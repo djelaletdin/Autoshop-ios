@@ -14,10 +14,12 @@ struct ProductModel: Codable, Identifiable {
     let image: String?
     let barcode: String
     let amount: Int
+    let isAdded: Bool
 
     enum CodingKeys: String, CodingKey {
         case id
         case categoryID = "category_id"
         case name, image, barcode, amount
+        case isAdded = "is_added"
     }
 }

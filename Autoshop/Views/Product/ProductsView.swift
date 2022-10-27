@@ -15,7 +15,16 @@ struct ProductsView: View {
     var body: some View {
         List {
             ForEach(viewModel.products) { product in
-                Text(product.name)
+                HStack{
+                    Text(product.name)
+                    Spacer()
+                    Image(systemName: viewModel.contains(product) ? "heart.fill" : "heart")
+                        .foregroundColor(.red)
+                        .onTapGesture {
+                            viewModel.toggleFav(item: product)
+                        }
+                }
+                
             }
         }
         .navigationTitle(category.name)

@@ -1,5 +1,5 @@
 //
-//  HomeModel.swift
+//  ProductCategoryData.swift
 //  Smart Shoplist
 //
 //  Created by Didar Jelaletdinov on 2022/09/15.

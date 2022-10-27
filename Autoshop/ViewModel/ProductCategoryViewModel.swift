@@ -20,7 +20,7 @@ class ProductCategoryViewModel: ObservableObject {
     }
     
     private func fetchData() async -> [ProductCategoryData] {
-        print("anything")
+        
         guard let url = URL(string: "http://autoshop.test/api/index") else { return [] }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
@@ -28,6 +28,7 @@ class ProductCategoryViewModel: ObservableObject {
             return result
         }
         catch {
+            print("error in network")
             return []
         }
         
