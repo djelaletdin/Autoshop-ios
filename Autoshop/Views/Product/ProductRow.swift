@@ -9,10 +9,20 @@ import SwiftUI
 
 struct ProductRow: View {
     
-    let colors: [String: Color] = ["D": .purple, "G": .black, "N": .red, "S": .blue, "V": .green]
     let item: ProductModel
     
     var body: some View {
+        
+        let color: Color = {
+            if item.amount > 5 {
+                return .green
+            } else if item.amount > 0 && item.amount < 5{
+                return .yellow
+            } else {
+                return .red
+            }
+        }()
+        
         HStack {
             
             Image(item.image ?? "")
@@ -22,11 +32,13 @@ struct ProductRow: View {
             VStack(alignment: .leading) {
                 Text(item.name)
                     .font(.headline)
+                Text("\(item.amount) left")
+                    .font(.caption)
+                    .fontWeight(.black)
+                    .padding(5)
+                    .background(color)
+                    .foregroundColor(.white)
             }
-            
-            Spacer()
-            
-            Text("\(item.amount) out of stock")
         }
         
     }

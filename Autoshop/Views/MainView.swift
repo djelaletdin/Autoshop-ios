@@ -14,10 +14,15 @@ struct MainView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+            ShoppingListView()
+                .tabItem {
+                    Label("ShoppingList", systemImage: "tag")
+                }
             CategoriesView()
                 .tabItem {
-                    Label("ShoppingList", systemImage: "list.dash")
+                    Label("Items", systemImage: "list.dash")
                 }
+
         }
     }
 }

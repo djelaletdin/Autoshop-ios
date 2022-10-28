@@ -16,7 +16,7 @@ struct ProductsView: View {
         List {
             ForEach(viewModel.products) { product in
                 HStack{
-                    Text(product.name)
+                    ProductRow(item: product)
                     Spacer()
                     Image(systemName: viewModel.contains(product) ? "heart.fill" : "heart")
                         .foregroundColor(.red)

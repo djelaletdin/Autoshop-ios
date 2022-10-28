@@ -18,6 +18,10 @@ final class Database {
     func load() -> Set<Int> {
         let array = UserDefaults.standard.array(forKey: FAV_KEY) as? [Int] ?? [Int]()
         return Set(array)
-        
+    }
+    
+    func get() -> [Int] {
+        let array = UserDefaults.standard.array(forKey: FAV_KEY) as? [Int] ?? [Int]()
+        return array
     }
 }
