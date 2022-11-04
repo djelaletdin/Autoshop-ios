@@ -14,9 +14,9 @@ struct ProductRow: View {
     var body: some View {
         
         let color: Color = {
-            if item.amount > 5 {
+            if item.amount > 3 {
                 return .green
-            } else if item.amount > 0 && item.amount < 5{
+            } else if item.amount > 0 && item.amount < 3{
                 return .yellow
             } else {
                 return .red

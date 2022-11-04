@@ -44,13 +44,7 @@ class ShoppingViewModel: ObservableObject {
     }
     
     private var db = Database()
-    
-//    func sortFavs() {
-//        withAnimation() {
-//            showingFavs.toggle()
-//        }
-//    }
-    
+
     func contains(_ item: ProductModel) -> Bool {
             savedItems.contains(item.id)
         }

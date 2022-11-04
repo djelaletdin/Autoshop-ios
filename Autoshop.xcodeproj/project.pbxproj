@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E141D71291546E000A0F88A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E141D70291546E000A0F88A /* HomeModel.swift */; };
 		0E16F5152901437B00B1D1CA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16F5142901437B00B1D1CA /* CategoryRow.swift */; };
 		0E56B329290976C50003A372 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B328290976C50003A372 /* Database.swift */; };
 		0E56B32B290979CC0003A372 /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B32A290979CC0003A372 /* ListItemModel.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E141D70291546E000A0F88A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		0E16F5132901387400B1D1CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0E16F5142901437B00B1D1CA /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		0E56B328290976C50003A372 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				0E9E701728FEED6400ABEC49 /* ProductModel.swift */,
 				0E56B328290976C50003A372 /* Database.swift */,
 				0E56B32A290979CC0003A372 /* ListItemModel.swift */,
+				0E141D70291546E000A0F88A /* HomeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				0EAA167F290961A500E43EBF /* ProductsViewModel.swift in Sources */,
 				0E9E701828FEED6400ABEC49 /* ProductModel.swift in Sources */,
 				0E16F5152901437B00B1D1CA /* CategoryRow.swift in Sources */,
+				0E141D71291546E000A0F88A /* HomeModel.swift in Sources */,
 				0E9E701328FEEBB700ABEC49 /* ProductCategoryData.swift in Sources */,
 				0E9E700928FEE9F500ABEC49 /* MainView.swift in Sources */,
 				0E56B329290976C50003A372 /* Database.swift in Sources */,

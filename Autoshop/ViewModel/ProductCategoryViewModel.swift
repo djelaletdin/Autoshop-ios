@@ -21,7 +21,7 @@ class ProductCategoryViewModel: ObservableObject {
     
     private func fetchData() async -> [ProductCategoryData] {
         
-        guard let url = URL(string: "http://autoshop.test/api/index") else { return [] }
+        guard let url = URL(string: "http://autoshop.test/api/categories") else { return [] }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let result = try JSONDecoder().decode([ProductCategoryData].self, from: data)
