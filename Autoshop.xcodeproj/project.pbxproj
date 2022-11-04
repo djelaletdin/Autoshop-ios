@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E141D71291546E000A0F88A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E141D70291546E000A0F88A /* HomeModel.swift */; };
+		0E141D752915583700A0F88A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E141D742915583700A0F88A /* RecipeView.swift */; };
 		0E16F5152901437B00B1D1CA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16F5142901437B00B1D1CA /* CategoryRow.swift */; };
 		0E56B329290976C50003A372 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B328290976C50003A372 /* Database.swift */; };
 		0E56B32B290979CC0003A372 /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56B32A290979CC0003A372 /* ListItemModel.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0E141D70291546E000A0F88A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		0E141D742915583700A0F88A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		0E16F5132901387400B1D1CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0E16F5142901437B00B1D1CA /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		0E56B328290976C50003A372 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -63,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E141D732915581000A0F88A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0E9E700B28FEEA4600ABEC49 /* HomeView.swift */,
+				0E141D742915583700A0F88A /* RecipeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		0E9E6FED28FEE99600ABEC49 = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +115,10 @@
 		0E9E700728FEE9E200ABEC49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E141D732915581000A0F88A /* Home */,
 				0EAA1684290969D200E43EBF /* Category */,
 				0EAA1685290969EB00E43EBF /* Product */,
 				0E9E700828FEE9F500ABEC49 /* MainView.swift */,
-				0E9E700B28FEEA4600ABEC49 /* HomeView.swift */,
 				0E56B32C290ABA610003A372 /* ShoppingListView.swift */,
 			);
 			path = Views;
@@ -241,6 +252,7 @@
 				0EAA16812909661800E43EBF /* ProductsView.swift in Sources */,
 				0E56B32D290ABA610003A372 /* ShoppingListView.swift in Sources */,
 				0EAA1683290969BE00E43EBF /* ProductRow.swift in Sources */,
+				0E141D752915583700A0F88A /* RecipeView.swift in Sources */,
 				0E9E700D28FEEA4600ABEC49 /* HomeView.swift in Sources */,
 				0E9E701B28FEEE5C00ABEC49 /* ProductCategoryViewModel.swift in Sources */,
 				0E9E6FFA28FEE99600ABEC49 /* AutoshopApp.swift in Sources */,

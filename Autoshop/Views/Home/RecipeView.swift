@@ -1,27 +1,11 @@
 //
-//  HomeView.swift
-//  Smart Shoplist
+//  RecipeView.swift
+//  Autoshop
 //
-//  Created by Didar Jelaletdinov on 2022/10/18.
+//  Created by Didar Jelaletdinov on 2022/11/04.
 //
 
 import SwiftUI
-
-struct HomeView: View {
-    var body: some View {
-        
-        VStack(alignment: .leading) {
-            RecipeView()
-            
-        }
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
 
 struct RecipeView: View {
     var body: some View {
@@ -34,8 +18,7 @@ struct RecipeView: View {
             HStack {
                 ForEach(0..<7) { _ in
                     RecipeCardView()
-                        .padding()
-                    
+                        .padding()      
                 }
             }
         }.background(Color.blue)
