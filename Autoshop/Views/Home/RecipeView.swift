@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeView: View {
     
-    
+    var item: HomeModel
     
     var body: some View {
         Text("Recipes")
@@ -19,8 +19,8 @@ struct RecipeView: View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(0..<7) { _ in
-                    RecipeCardView()
+                ForEach(item.data) { recipe in
+                    RecipeCardView(name: recipe.fullName ?? "", note: recipe.note ?? "Note" , time: recipe.cookingTime ?? 0)
                         .padding(8)      
                 }
             }
@@ -30,6 +30,11 @@ struct RecipeView: View {
 }
 
 struct RecipeCardView: View {
+    
+    var name: String = "Recipe Name"
+    var note: String = "lorem ipsum"
+    var time: Int = 0
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Image("")
@@ -38,11 +43,11 @@ struct RecipeCardView: View {
                 .frame(width: 210, height: 150)
                 .background(Color.yellow)
                 .cornerRadius(9)
-            Text("Recipe Name")
+            Text(name)
                 .font(.headline)
-            Text("Notes about the recipe")
+            Text(note)
                 .font(.subheadline)
-            Text("\(Image(systemName: "clock")) 20 minutes")
+            Text("\(Image(systemName: "clock")) \(time) minutes")
         }
         .frame(width: 220, height: 250)
         .padding(10)

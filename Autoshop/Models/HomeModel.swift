@@ -19,7 +19,7 @@ struct HomeModel: Codable {
 }
 
 // MARK: - Datum
-struct HomeDatum: Codable {
+struct HomeDatum: Codable, Identifiable {
     let id: Int
     let fullName, note: String?
     let cookingTime, categoryID: Int?

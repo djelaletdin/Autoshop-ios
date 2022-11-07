@@ -12,13 +12,19 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            RecipeView()
-            
-        }.task {
+        ScrollView{
+            VStack(alignment: .leading) {
+                if !viewModel.isSearching {
+                    RecipeView(item: viewModel.homeData[0])
+                }
+                ProductsList()
+            }
+        }
+        .frame(maxHeight: .infinity)
+        .onAppear() {
             viewModel.initFetchData()
         }
+
     }
 }
 
