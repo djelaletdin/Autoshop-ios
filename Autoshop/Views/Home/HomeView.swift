@@ -12,19 +12,26 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
-        ScrollView{
-            VStack(alignment: .leading) {
-                if !viewModel.isSearching {
-                    RecipeView(item: viewModel.homeData[0])
-                    ProductsList(item: viewModel.homeData[1])
+        NavigationStack {
+            ScrollView{
+                VStack(alignment: .leading) {
+                    Text("Autoshop")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .padding()
+                        
+                    if !viewModel.isSearching {
+                        RecipeView(item: viewModel.homeData[0])
+                        ProductsList(item: viewModel.homeData[1])
+                    }
                 }
             }
+            .frame(maxHeight: .infinity)
+            .onAppear() {
+                viewModel.initFetchData()
+            }
         }
-        .frame(maxHeight: .infinity)
-        .onAppear() {
-            viewModel.initFetchData()
-        }
-
     }
 }
 

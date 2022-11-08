@@ -54,9 +54,10 @@ struct ListCard: View {
         }
         .padding(.horizontal, 15)
         .frame(maxWidth: .infinity)
-        .background(Color.backgroundGray)
+        .background(Color.white)
         .cornerRadius(9)
         .padding(.vertical, 5)
         .padding(.horizontal, 10)
+        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 0)
     }
 }
