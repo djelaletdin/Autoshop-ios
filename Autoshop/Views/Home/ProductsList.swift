@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ProductsList: View {
+    
+    var item: HomeModel
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Out of stock products")
+            Text(item.categoryName)
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.leading)
             
-            ForEach(0..<10) { _ in
-                ListCard()
+            ForEach(item.data) { product in
+                ListCard(name: product.name ?? "")
             }
         }
     }
@@ -24,11 +27,16 @@ struct ProductsList: View {
 
 struct ProductsList_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsList()
+        ProductsList(item: HomeModel(categoryName: "Out of stock products", data: []))
     }
 }
 
 struct ListCard: View {
+    
+    var name: String = "Recipe Name"
+    var note: String = "lorem ipsum"
+    var time: Int = 0
+    
     var body: some View {
         HStack {
             Image("")
@@ -38,7 +46,7 @@ struct ListCard: View {
                 .background(Color.yellow)
                 .cornerRadius(9)
                 .padding(.vertical, 8)
-            Text("asdasdsd")
+            Text(name)
                 .font(.headline)
             Spacer()
             Text("200g")
@@ -46,9 +54,9 @@ struct ListCard: View {
         }
         .padding(.horizontal, 15)
         .frame(maxWidth: .infinity)
-        .background(Color.green)
+        .background(Color.backgroundGray)
+        .cornerRadius(9)
         .padding(.vertical, 5)
         .padding(.horizontal, 10)
-        
     }
 }

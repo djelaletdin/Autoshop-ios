@@ -16,8 +16,8 @@ struct HomeView: View {
             VStack(alignment: .leading) {
                 if !viewModel.isSearching {
                     RecipeView(item: viewModel.homeData[0])
+                    ProductsList(item: viewModel.homeData[1])
                 }
-                ProductsList()
             }
         }
         .frame(maxHeight: .infinity)
