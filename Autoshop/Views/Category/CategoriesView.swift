@@ -13,11 +13,11 @@ struct CategoriesView: View {
     
     var body: some View {
         NavigationView {
-            List {
+            ScrollView {
                 ForEach(viewModel.categories) { category in
                     NavigationLink(destination: ProductsView(category: category)) {
                         CategoryRow(item: category)
-                    }
+                    }.listRowSeparator(.hidden)
                 }
             }
             .navigationTitle("Categories")

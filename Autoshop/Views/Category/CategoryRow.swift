@@ -14,32 +14,27 @@ struct CategoryRow: View {
     
     var body: some View {
         HStack {
-            
-            Image(item.image ?? "")
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-            
-            VStack(alignment: .leading) {
-                Text(item.name)
-                    .font(.headline)
-                
-            }
-            
+            Image("")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60)
+                .background(Color.yellow)
+                .cornerRadius(9)
+                .padding(.vertical, 8)
+            Text(item.name)
+                .font(.headline)
             Spacer()
-            
-            Text("\(item.amount) out of stock")
-            
-//            ForEach(item.restrictions, id: \.self) { restriction in
-//                Text(restriction)
-//                    .font(.caption)
-//                    .fontWeight(.black)
-//                    .padding(5)
-//                    .background(colors[restriction])
-//                    .clipShape(Circle())
-//                    .foregroundColor(.white)
-//            }
+            Text("200g")
+                .font(.subheadline)
         }
-        
+        .foregroundColor(.black)
+        .padding(.horizontal, 15)
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .cornerRadius(9)
+        .padding(.vertical, 5)
+        .padding(.horizontal, 10)
+        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 0)
     }
 }
 

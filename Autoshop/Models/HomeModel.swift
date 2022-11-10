@@ -26,6 +26,7 @@ struct HomeDatum: Codable, Identifiable {
     let name: String?
     let image: String?
     let amount: Int?
+    let isAdded: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -34,5 +35,6 @@ struct HomeDatum: Codable, Identifiable {
         case cookingTime = "cooking_time"
         case categoryID = "category_id"
         case name, image, amount
+        case isAdded = "is_added"
     }
 }
