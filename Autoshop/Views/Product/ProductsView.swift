@@ -13,7 +13,7 @@ struct ProductsView: View {
     @StateObject var viewModel = ProductsViewModel()
     
     var body: some View {
-        List {
+        ScrollView {
             ForEach(viewModel.products) { product in
                 HStack{
                     ProductRow(item: product)

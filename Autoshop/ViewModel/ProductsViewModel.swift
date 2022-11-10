@@ -60,6 +60,8 @@ class ProductsViewModel: ObservableObject {
     
     // Toggle saved items
     func toggleFav(item: ProductModel) {
+        print("i am in")
+        print(item)
         if contains(item) {
             savedItems.remove(item.id)
         } else {

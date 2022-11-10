@@ -24,22 +24,49 @@ struct ProductRow: View {
         }()
         
         HStack {
-            
-            Image(item.image ?? "")
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-            
-            VStack(alignment: .leading) {
-                Text(item.name)
-                    .font(.headline)
-                Text("\(item.amount) left")
-                    .font(.caption)
-                    .fontWeight(.black)
-                    .padding(5)
-                    .background(color)
-                    .foregroundColor(.white)
-            }
+            Image("")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60)
+                .background(Color.yellow)
+                .cornerRadius(9)
+                .padding(.vertical, 8)
+            Text(item.name)
+                .font(.headline)
+            Spacer()
+            Text("Added")
+                .font(.caption)
+                .fontWeight(.black)
+                .padding(5)
+                .background(color)
+                .foregroundColor(.white)
         }
+        .foregroundColor(.black)
+        .padding(.horizontal, 15)
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .cornerRadius(9)
+        .padding(.vertical, 5)
+        .padding(.horizontal, 10)
+        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 0)
+        
+//        HStack {
+//
+//            Image(item.image ?? "")
+//                .clipShape(Circle())
+//                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+//
+//            VStack(alignment: .leading) {
+//                Text(item.name)
+//                    .font(.headline)
+//                Text("\(item.amount) left")
+//                    .font(.caption)
+//                    .fontWeight(.black)
+//                    .padding(5)
+//                    .background(color)
+//                    .foregroundColor(.white)
+//            }
+//        }
         
     }
 }
