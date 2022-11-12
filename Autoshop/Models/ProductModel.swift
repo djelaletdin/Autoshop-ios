@@ -13,7 +13,7 @@ struct ProductModel: Codable, Identifiable {
     let name: String
     let image: String?
     let barcode: String
-    let amount: Int
+    var amount: Int
     let isAdded: Bool
 
     enum CodingKeys: String, CodingKey {

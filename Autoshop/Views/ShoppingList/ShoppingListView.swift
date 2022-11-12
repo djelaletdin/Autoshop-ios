@@ -12,15 +12,18 @@ struct ShoppingListView: View {
     @StateObject var viewModel = ShoppingViewModel()
     
     var body: some View {
-        List {
-            ForEach(viewModel.products) { product in
-                Text(product.name)
+        NavigationView {
+            ScrollView {
+                ForEach(viewModel.products) { product in
+                    ShoppingListRowView(item: product)
+                }
             }
-        }
+            .navigationTitle("Shopping List")
             .onAppear {
                 viewModel.initFetchData()
-                print("sup")
             }
+        }
+        
     }
 }
 

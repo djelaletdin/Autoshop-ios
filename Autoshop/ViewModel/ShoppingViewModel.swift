@@ -26,7 +26,7 @@ class ShoppingViewModel: ObservableObject {
     private func fetchData(_ ids: [Int])  {
         let parameters: [String: [Int]] = ["products": ids]
         
-        AF.request("http://autoshop.test/api/order", method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseDecodable(of: [ProductModel].self) { response in
+        AF.request("http://autoshop.test/api/shopping_list", method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseDecodable(of: [ProductModel].self) { response in
 //            print(response.value?.first)
             DispatchQueue.main.async {
                 self.products = response.value ?? []
