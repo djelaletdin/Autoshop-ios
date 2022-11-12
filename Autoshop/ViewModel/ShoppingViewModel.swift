@@ -23,6 +23,17 @@ class ShoppingViewModel: ObservableObject {
         isSearching = false
     }
     
+    func storeData(){
+        let items = CartItem.cartItems.map{$0.dictionaryRepresentation}
+        let parameters: [String: Any] = ["products": items]
+
+        print(items)
+        
+        AF.request("http://autoshop.test/api/order", method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseDecodable(of: [ProductModel].self) { response in
+//            print(response.value?.first)
+        }
+    }
+    
     private func fetchData(_ ids: [Int])  {
         let parameters: [String: [Int]] = ["products": ids]
         
@@ -30,6 +41,11 @@ class ShoppingViewModel: ObservableObject {
 //            print(response.value?.first)
             DispatchQueue.main.async {
                 self.products = response.value ?? []
+                
+                for product in self.products {
+                    CartItem.addItem(item: CartItem(id: product.id, amount: product.amount))
+                }
+                
             }
             
         }

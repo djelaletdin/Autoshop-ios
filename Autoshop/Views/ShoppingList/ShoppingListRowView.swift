@@ -10,6 +10,7 @@ import SwiftUI
 struct ShoppingListRowView: View {
     
     @State var item: ProductModel
+    var index: Int
     
     var body: some View {
         HStack {
@@ -24,8 +25,7 @@ struct ShoppingListRowView: View {
             Text(item.name)
                 .font(.headline)
             Spacer()
-            CustomStepper(amount: $item.amount)
-            
+            CustomStepper(item: $item, index: index)
         }
         .foregroundColor(.black)
         .padding(.horizontal, 15)
@@ -39,33 +39,34 @@ struct ShoppingListRowView: View {
 
 struct ShoppingListRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ShoppingListRowView(item: ProductModel(id: 1, categoryID: 1, name: "Ullakan alma", image: "", barcode: "123asd123", amount: 12, isAdded: false))
+        ShoppingListRowView(item: ProductModel(id: 1, categoryID: 1, name: "Ullakan alma", image: "", barcode: "123asd123", amount: 12, isAdded: false), index: 1)
     }
 }
 
 struct CustomStepper : View {
     
-    @Binding var amount: Int
-        
-//    init(withAmount: Binding<Int>) {
-//        self._amount = withAmount
-//    }
+    @Binding var item: ProductModel
+    @State var isChangeStarted = false
+    var index: Int
 
     var body: some View {
             HStack {
             
                 Button(action: {
-                    self.amount -= 1
+                    self.item.amount -= 1
+                    CartItem.cartItems[index] = CartItem(id: item.id, amount: self.item.amount)
+                    print(CartItem.cartItems)
                     self.feedback()
                 }, label: {
                     Image(systemName: "minus.square")
                         .foregroundColor(Color.gray)
                 })
                 
-                Text("\(amount)")
+                Text("\(item.amount)")
 
                 Button(action: {
-                    self.amount += 1
+                    self.item.amount += 1
+                    CartItem.cartItems[index] = CartItem(id: item.id, amount: self.item.amount)
                     self.feedback()
                 }, label: {
                     Image(systemName: "plus.square")
