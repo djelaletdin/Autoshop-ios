@@ -29,7 +29,10 @@ struct HomeView: View {
             }
             .frame(maxHeight: .infinity)
             .onAppear() {
-                viewModel.initFetchData()
+                if viewModel.homeData.isEmpty {
+                    viewModel.initFetchData()
+                }
+                
             }
         }
     }

@@ -52,12 +52,6 @@ struct ListCard: View {
             Text("200g")
                 .font(.subheadline)
         }
-        .padding(.horizontal, 15)
-        .frame(maxWidth: .infinity)
-        .background(Color.white)
-        .cornerRadius(9)
-        .padding(.vertical, 5)
-        .padding(.horizontal, 10)
-        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 0)
+        .addShadow()
     }
 }

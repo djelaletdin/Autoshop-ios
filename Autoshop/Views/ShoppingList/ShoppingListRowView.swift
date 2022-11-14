@@ -27,13 +27,7 @@ struct ShoppingListRowView: View {
             Spacer()
             CustomStepper(item: $item, index: index)
         }
-        .foregroundColor(.black)
-        .padding(.horizontal, 15)
-        .background(Color.white)
-        .cornerRadius(9)
-        .padding(.vertical, 5)
-        .padding(.horizontal, 10)
-        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 0)
+        .addShadow()
     }
 }
 

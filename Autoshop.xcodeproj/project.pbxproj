@@ -19,6 +19,7 @@
 		0E56B332290C169D0003A372 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E56B331290C169D0003A372 /* Alamofire */; };
 		0E9B0C0D291CE4A7007A9CC3 /* ShoppingListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B0C0C291CE4A7007A9CC3 /* ShoppingListRowView.swift */; };
 		0E9B0C0F291FC98E007A9CC3 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B0C0E291FC98E007A9CC3 /* CartItem.swift */; };
+		0E9B0C1229212BCC007A9CC3 /* ShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B0C1129212BCC007A9CC3 /* ShadowModifier.swift */; };
 		0E9E6FFA28FEE99600ABEC49 /* AutoshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E6FF928FEE99600ABEC49 /* AutoshopApp.swift */; };
 		0E9E6FFE28FEE99700ABEC49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9E6FFD28FEE99700ABEC49 /* Assets.xcassets */; };
 		0E9E700128FEE99700ABEC49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9E700028FEE99700ABEC49 /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		0E56B32E290BFD940003A372 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 		0E9B0C0C291CE4A7007A9CC3 /* ShoppingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRowView.swift; sourceTree = "<group>"; };
 		0E9B0C0E291FC98E007A9CC3 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		0E9B0C1129212BCC007A9CC3 /* ShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModifier.swift; sourceTree = "<group>"; };
 		0E9E6FF628FEE99600ABEC49 /* Autoshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autoshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9E6FF928FEE99600ABEC49 /* AutoshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoshopApp.swift; sourceTree = "<group>"; };
 		0E9E6FFD28FEE99700ABEC49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			path = ShoppingList;
 			sourceTree = "<group>";
 		};
+		0E9B0C1029212B39007A9CC3 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0E9B0C1129212BCC007A9CC3 /* ShadowModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		0E9E6FED28FEE99600ABEC49 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		0E9E700728FEE9E200ABEC49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E9B0C1029212B39007A9CC3 /* Modifiers */,
 				0E141D732915581000A0F88A /* Home */,
 				0EAA1684290969D200E43EBF /* Category */,
 				0EAA1685290969EB00E43EBF /* Product */,
@@ -282,6 +293,7 @@
 				0E141D752915583700A0F88A /* RecipeView.swift in Sources */,
 				0E9E700D28FEEA4600ABEC49 /* HomeView.swift in Sources */,
 				0E9E701B28FEEE5C00ABEC49 /* ProductCategoryViewModel.swift in Sources */,
+				0E9B0C1229212BCC007A9CC3 /* ShadowModifier.swift in Sources */,
 				0E9E6FFA28FEE99600ABEC49 /* AutoshopApp.swift in Sources */,
 				0E56B32B290979CC0003A372 /* ListItemModel.swift in Sources */,
 				0E141D772916000900A0F88A /* ProductsList.swift in Sources */,
