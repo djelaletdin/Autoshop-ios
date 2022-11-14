@@ -29,15 +29,22 @@ class ShoppingViewModel: ObservableObject {
         
         print(parameters)
         
-        AF.request("http://autoshop.test/api/order", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable(of: SuccesModel.self) { response in
+        AF.request("http://autoshop.test/api/order", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable(of: SuccesModel.self) { [weak self] response in
                     
             if let data = response.data {
                 let json = String(data: data, encoding: String.Encoding.utf8)
                 print(json)
+                
+                self?.savedItems = []
+                self?.products = []
+                self?.db.resetDefaults()
             }
             
             print(response.value?.message ?? "")
         }
+        
+        
+        
     }
     
     private func fetchData(_ ids: [Int])  {

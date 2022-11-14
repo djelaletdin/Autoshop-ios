@@ -24,4 +24,12 @@ final class Database {
         let array = UserDefaults.standard.array(forKey: FAV_KEY) as? [Int] ?? [Int]()
         return array
     }
+    
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
 }

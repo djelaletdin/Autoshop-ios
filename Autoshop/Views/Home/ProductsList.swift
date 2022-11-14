@@ -49,7 +49,7 @@ struct ListCard: View {
             Text(name)
                 .font(.headline)
             Spacer()
-            Text("200g")
+            Text(note)
                 .font(.subheadline)
         }
         .addShadow()

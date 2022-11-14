@@ -20,7 +20,7 @@ struct RecipeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(item.data) { recipe in
-                    NavigationLink(destination: Text(recipe.fullName ?? "")) {
+                    NavigationLink(destination: RecipeDetailView(recipeId: recipe.id)) {
                         RecipeCardView(name: recipe.fullName ?? "", note: recipe.note ?? "Note" , time: recipe.cookingTime ?? 0)
                             .padding(8)
                     }
