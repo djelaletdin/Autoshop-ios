@@ -30,10 +30,11 @@ struct ShoppingListView: View {
                 } label: {
                     Text("Submit").frame(maxWidth: .infinity)
                         .padding(10)
-                        .font(.headline)
+                        .font(.title2)
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
                 }
-                .background(Color.red)
+                .background(Color.actionBlue)
                 .cornerRadius(14)
                 .padding(10)
                 

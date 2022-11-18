@@ -11,29 +11,44 @@ struct RecipeDetailView: View {
     
     @StateObject var viewModel = RecipeViewModel()
     var recipeId: Int?
+    var recipeName: String = "Name"
+    var note: String = "Note"
     
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
-                Image("image")
+                Image("burger")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                RecipeText()
+                RecipeText(name: recipeName, note: note)
                 ForEach(viewModel.productsData) { product in
                     HStack {
-                        Image("image")
+                        Image("")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 60, height: 60)
-                            .background(Color.yellow)
+                            .background(Color.gray.opacity(50))
                             .cornerRadius(9)
                             .padding(.vertical, 8)
-                        Text(product.name)
+                        Text("\(product.name) (\(product.amount)/\(product.stock))")
+                            .foregroundColor(product.amount>product.stock ? Color.red : Color.black)
                             .font(.headline)
                         Spacer()
-                        Button(viewModel.contains(product) ? "Added" : "Add") {
+                        Button {
                             viewModel.toggleFav(item: product)
+                        } label: {
+                                Text(viewModel.contains(product) ? "Added" : "Add")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(viewModel.contains(product) ? Color.actionBlue : Color.white)
+                                .padding(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 9)
+                                        .stroke(viewModel.contains(product) ? Color.actionBlue : Color.white, lineWidth: 3)
+                                        )
                         }
+                        .background(viewModel.contains(product) ? Color.white : Color.actionBlue)
+                        .cornerRadius(9)
                         
                         
                         
@@ -56,13 +71,17 @@ struct RecipeDetailView_Previews: PreviewProvider {
 }
 
 struct RecipeText: View{
+    
+    var name: String = "Recipe name"
+    var note: String = "asds"
+    
     var body: some View {
         VStack (alignment: .leading, spacing: 20) {
-            Text("Recipe Name")
+            Text(name)
                 .font(.title)
                 .fontWeight(.bold)
             
-            Text("Lorem asdasdlajksfasljf sfdasdhljfalfaslhfsdljfbsdfsaflkjdflsakjdfhlaksdhjf asjdhfsljhdfsljkdfh")
+            Text(note)
         }
         .foregroundColor(.black)
         .padding(.horizontal)

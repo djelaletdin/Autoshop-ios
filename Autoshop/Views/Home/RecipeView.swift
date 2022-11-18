@@ -20,7 +20,7 @@ struct RecipeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(item.data) { recipe in
-                    NavigationLink(destination: RecipeDetailView(recipeId: recipe.id)) {
+                    NavigationLink(destination: RecipeDetailView(recipeId: recipe.id, recipeName: recipe.fullName ?? "", note: recipe.note ?? "")) {
                         RecipeCardView(name: recipe.fullName ?? "", note: recipe.note ?? "Note" , time: recipe.cookingTime ?? 0)
                             .padding(8)
                     }
@@ -40,11 +40,11 @@ struct RecipeCardView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Image("image")
+            Image(name == "Beef Burger Recipe" ? "burger" : "image" )
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 210, height: 150)
-                .background(Color.yellow)
+                .background(Color.gray.opacity(50))
                 .cornerRadius(9)
             Text(name)
                 .font(.headline)

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - WelcomeElement
 struct RecipeProduct: Identifiable, Codable  {
-    let id, recipeID, productID, amount: Int
+    let id, recipeID, productID, amount, stock: Int
     let name: String
     let isAdded: Bool
 
@@ -17,7 +17,7 @@ struct RecipeProduct: Identifiable, Codable  {
         case id
         case recipeID = "recipe_id"
         case productID = "product_id"
-        case amount, name
+        case amount, name, stock
         case isAdded = "is_added"
     }
 }

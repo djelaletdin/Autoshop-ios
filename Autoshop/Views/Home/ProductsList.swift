@@ -43,7 +43,7 @@ struct ListCard: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
-                .background(Color.yellow)
+                .background(Color.gray.opacity(50))
                 .cornerRadius(9)
                 .padding(.vertical, 8)
             Text(name)

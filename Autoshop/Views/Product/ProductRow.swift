@@ -17,7 +17,7 @@ struct ProductRow: View {
             if item.amount > 3 {
                 return .green
             } else if item.amount > 0 && item.amount < 3{
-                return .yellow
+                return .gray.opacity(50)
             } else {
                 return .red
             }
@@ -28,7 +28,7 @@ struct ProductRow: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
-                .background(Color.yellow)
+                .background(Color.gray.opacity(50))
                 .cornerRadius(9)
                 .padding(.vertical, 8)
             Text(item.name)
