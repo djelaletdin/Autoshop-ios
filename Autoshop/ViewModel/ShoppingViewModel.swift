@@ -27,20 +27,14 @@ class ShoppingViewModel: ObservableObject {
         let items: [[String: Int]] = CartItem.cartItems.map{$0.dictionaryRepresentation}
         let parameters: [String: Any] = ["products": items]
         
-        print(parameters)
         
-        AF.request("http://autoshop.test/api/order", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable(of: SuccesModel.self) { [weak self] response in
+        AF.request("https://autoshop.realapps.xyz/api/order", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable(of: SuccesModel.self) { [weak self] response in
                     
-            if let data = response.data {
-                let json = String(data: data, encoding: String.Encoding.utf8)
-                print(json)
-                
+            if let _ = response.data {
                 self?.savedItems = []
                 self?.products = []
                 self?.db.resetDefaults()
             }
-            
-            print(response.value?.message ?? "")
         }
         
         
@@ -50,15 +44,12 @@ class ShoppingViewModel: ObservableObject {
     private func fetchData(_ ids: [Int])  {
         let parameters: [String: [Int]] = ["products": ids]
         
-        print(parameters)
-        
-        AF.request("http://autoshop.test/api/shopping_list", method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseDecodable(of: [ProductModel].self) { response in
-//            print(response.value?.first)
+        AF.request("https://autoshop.realapps.xyz/api/shopping_list", method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseDecodable(of: [ProductModel].self) { response in
             DispatchQueue.main.async {
                 self.products = response.value ?? []
                 if CartItem.cartItems.isEmpty {
                     for product in self.products {
-                    CartItem.addItem(item: CartItem(id: product.id, amount: product.amount))
+                        CartItem.addItem(item: CartItem(id: product.id, amount: product.amount))
                     }
                 }
             }

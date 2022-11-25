@@ -49,7 +49,6 @@ struct CustomStepper : View {
                 Button(action: {
                     self.item.amount -= 1
                     CartItem.cartItems[index] = CartItem(id: item.id, amount: self.item.amount)
-                    print(CartItem.cartItems)
                     self.feedback()
                 }, label: {
                     Image(systemName: "minus.square")

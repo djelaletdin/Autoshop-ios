@@ -22,9 +22,6 @@ struct ShoppingListView: View {
                         ShoppingListRowView(item: product, index: index)
                     }
                 }
-                .onAppear {
-                    print(CartItem.cartItems)
-                }
                 Button {
                     viewModel.storeData()
                 } label: {

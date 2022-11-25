@@ -25,8 +25,7 @@ class ProductsViewModel: ObservableObject {
     
     private func fetchData(_ id: Int) async -> [ProductModel] {
         
-        guard let url = URL(string: "http://autoshop.test/api/category/\(id)") else { return [] }
-        print(url)
+        guard let url = URL(string: "http://autoshop.realapps.xyz/api/category/\(id)") else { return [] }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let result = try JSONDecoder().decode([ProductModel].self, from: data)
@@ -56,8 +55,6 @@ class ProductsViewModel: ObservableObject {
     
     // Toggle saved items
     func toggleFav(item: ProductModel) {
-        print("i am in")
-        print(item)
         if contains(item) {
             savedItems.remove(item.id)
         } else {

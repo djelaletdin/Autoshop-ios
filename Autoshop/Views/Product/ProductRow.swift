@@ -9,14 +9,15 @@ import SwiftUI
 
 struct ProductRow: View {
     
-    let item: ProductModel
+    @ObservedObject var viewModel: ProductsViewModel
+    let product: ProductModel
     
     var body: some View {
         
         let color: Color = {
-            if item.amount > 3 {
+            if product.amount > 3 {
                 return .green
-            } else if item.amount > 0 && item.amount < 3{
+            } else if product.amount > 0 && product.amount < 3{
                 return .gray.opacity(50)
             } else {
                 return .red
@@ -31,22 +32,27 @@ struct ProductRow: View {
                 .background(Color.gray.opacity(50))
                 .cornerRadius(9)
                 .padding(.vertical, 8)
-            Text(item.name)
+            Text("\(product.name) (\(product.amount))")
+                .foregroundColor(product.amount == 0 ? Color.red : Color.black)
                 .font(.headline)
             Spacer()
-            Text("Added")
-                .font(.caption)
-                .fontWeight(.black)
-                .padding(5)
-                .background(color)
-                .foregroundColor(.white)
+            Button {
+                viewModel.toggleFav(item: product)
+            } label: {
+                    Text(viewModel.contains(product) ? "Added" : "Add")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(viewModel.contains(product) ? Color.actionBlue : Color.white)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 9)
+                            .stroke(viewModel.contains(product) ? Color.actionBlue : Color.white, lineWidth: 3)
+                            )
+            }
+            .background(viewModel.contains(product) ? Color.white : Color.actionBlue)
+            .cornerRadius(9)
         }
         .addShadow()
-    }
-}
 
-struct ProductRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductRow(item: ProductModel(id: 1, categoryID: 1, name: "Ullakan alma", image: "", barcode: "123asd123", amount: 12, isAdded: false))
     }
 }

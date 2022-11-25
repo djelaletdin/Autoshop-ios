@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductsList: View {
     
+    @ObservedObject var viewModel: HomeViewModel
     var item: HomeModel
     
     var body: some View {
@@ -19,23 +20,16 @@ struct ProductsList: View {
                 .padding(.leading)
             
             ForEach(item.data) { product in
-                ListCard(name: product.name ?? "")
+                ListCard(viewModel: viewModel, product: product)
             }
         }
     }
 }
 
-struct ProductsList_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductsList(item: HomeModel(categoryName: "Out of stock products", data: []))
-    }
-}
-
 struct ListCard: View {
     
-    var name: String = "Recipe Name"
-    var note: String = "lorem ipsum"
-    var time: Int = 0
+    @ObservedObject var viewModel: HomeViewModel
+    var product: HomeDatum
     
     var body: some View {
         HStack {
@@ -46,11 +40,23 @@ struct ListCard: View {
                 .background(Color.gray.opacity(50))
                 .cornerRadius(9)
                 .padding(.vertical, 8)
-            Text(name)
+            Text(product.name ?? "")
                 .font(.headline)
             Spacer()
-            Text(note)
-                .font(.subheadline)
+            Button {
+                viewModel.toggleFav(item: product)
+            } label: {
+                Text(viewModel.contains(product) ? "Added" : "Add")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(viewModel.contains(product) ? Color.actionBlue : Color.white)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 9).stroke(viewModel.contains(product) ? Color.actionBlue : Color.white, lineWidth: 3)
+                    )
+            }
+            .background(viewModel.contains(product) ? Color.white : Color.actionBlue)
+            .cornerRadius(9)
         }
         .addShadow()
     }

@@ -22,14 +22,12 @@ class HomeViewModel: ObservableObject {
     
     private func fetchData() {
         
-        let request = AF.request("http://autoshop.test/api/index")
-        print("sup")
+        let request = AF.request("http://autoshop.realapps.xyz/api/index")
         request.responseDecodable(of: [HomeModel].self) { (response) in
             guard let data = response.value else { return }
             DispatchQueue.main.async {
                 self.homeData = data
                 self.isSearching = false
-                print(data)
             }
         }
     }
@@ -51,8 +49,6 @@ class HomeViewModel: ObservableObject {
     
     // Toggle saved items
     func toggleFav(item: HomeDatum) {
-        print("i am in")
-        print(item)
         if contains(item) {
             savedItems.remove(item.id)
         } else {

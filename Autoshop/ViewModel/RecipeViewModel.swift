@@ -33,14 +33,13 @@ class RecipeViewModel: ObservableObject {
     
     private func fetchData(id: Int) {
         
-        let request = AF.request("http://autoshop.test/api/recipe/\(id)")
-        print("sup")
+        let request = AF.request("http://autoshop.realapps.xyz/api/recipe/\(id)")
+
         request.responseDecodable(of: [RecipeProduct].self) { (response) in
             guard let data = response.value else { return }
             DispatchQueue.main.async {
                 self.productsData = data
                 self.isSearching = false
-                print(data)
             }
         }
     }
@@ -62,8 +61,6 @@ class RecipeViewModel: ObservableObject {
     
     // Toggle saved items
     func toggleFav(item: RecipeProduct) {
-        print("i am in")
-        print(item)
         if contains(item) {
             savedItems.remove(item.productID)
         } else {
