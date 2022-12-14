@@ -10,12 +10,13 @@ import Foundation
 class ProductCategoryViewModel: ObservableObject {
     
     @Published var categories: [ProductCategoryData] = []
-    @Published var isSearching = false
+    @Published var isSearching = true
 
     @MainActor
     func initFetchData() async {
         isSearching = true
         categories = await fetchData()
+        print("searching is false now")
         isSearching = false
     }
     

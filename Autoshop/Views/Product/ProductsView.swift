@@ -13,18 +13,20 @@ struct ProductsView: View {
     @ObservedObject var viewModel = ProductsViewModel()
     
     var body: some View {
-        ScrollView {
-            ForEach(viewModel.products) { product in
-                ProductRow(viewModel: viewModel, product: product)
+        if viewModel.isSearching {
+            ProgressView()
+                .task {
+                    await viewModel.initFetchData(category.id)
+                }
+        } else {
+            ScrollView {
+                ForEach(viewModel.products) { product in
+                    ProductRow(viewModel: viewModel, product: product)
+                }
             }
-        }
-        .navigationTitle(category.name)
-        .navigationBarTitleDisplayMode(.inline)
-        .task {
-            await viewModel.initFetchData(category.id)
-        }.refreshable {
-            await viewModel.initFetchData(category.id)
-        }
+            .navigationTitle(category.name)
+            .navigationBarTitleDisplayMode(.inline)}
+        
     }
 }
 

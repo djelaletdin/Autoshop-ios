@@ -13,17 +13,7 @@ struct ProductRow: View {
     let product: ProductModel
     
     var body: some View {
-        
-        let color: Color = {
-            if product.amount > 3 {
-                return .green
-            } else if product.amount > 0 && product.amount < 3{
-                return .gray.opacity(50)
-            } else {
-                return .red
-            }
-        }()
-        
+
         HStack {
             Image("")
                 .resizable()

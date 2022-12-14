@@ -12,19 +12,22 @@ struct CategoriesView: View {
     @StateObject var viewModel = ProductCategoryViewModel()
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                ForEach(viewModel.categories) { category in
-                    NavigationLink(destination: ProductsView(category: category)) {
-                        CategoryRow(item: category)
-                    }.listRowSeparator(.hidden)
+        NavigationStack {
+            
+            if viewModel.isSearching {
+                ProgressView()
+                    .task {
+                        await viewModel.initFetchData()
+                    }
+            } else {
+                ScrollView {
+                    ForEach(viewModel.categories) { category in
+                        NavigationLink(destination: ProductsView(category: category)) {
+                            CategoryRow(item: category)
+                        }.listRowSeparator(.hidden)
+                    }
                 }
-            }
-            .navigationTitle("Categories")
-            .task {
-                await viewModel.initFetchData()
-            }.refreshable {
-                await viewModel.initFetchData()
+                .navigationTitle("Categories")
             }
         }
     }

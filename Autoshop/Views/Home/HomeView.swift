@@ -13,27 +13,36 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView{
-                VStack(alignment: .leading) {
-                    Text("Autoshop")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .padding()
+            
+            if viewModel.isSearching {
+                ProgressView()
+                    .onAppear() {
+                        if viewModel.homeData.isEmpty {
+                            viewModel.initFetchData()
+                        }
+                    }
+            } else {
+                
+                ScrollView{
+                    VStack(alignment: .leading) {
                         
-                    if !viewModel.isSearching {
-                        RecipeView(item: viewModel.homeData[0])
-                        ProductsList(viewModel: viewModel, item: viewModel.homeData[1])
+                        
+                        Text("Autoshop")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .padding()
+                        
+                        if !viewModel.isSearching {
+                            RecipeView(item: viewModel.homeData[0])
+                            ProductsList(viewModel: viewModel, item: viewModel.homeData[1])
+                        }
                     }
                 }
-            }
-            .frame(maxHeight: .infinity)
-            .onAppear() {
-                if viewModel.homeData.isEmpty {
-                    viewModel.initFetchData()
-                }
+                .frame(maxHeight: .infinity)
                 
             }
+
         }
     }
 }

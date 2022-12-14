@@ -11,7 +11,7 @@ import Foundation
 class ProductsViewModel: ObservableObject {
     
     @Published var products: [ProductModel] = []
-    @Published var isSearching = false
+    @Published var isSearching = true
     @Published var showingFavs = false
     @Published var savedItems: Set<Int> = []
 
