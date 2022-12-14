@@ -11,8 +11,9 @@ import Alamofire
 class ShoppingViewModel: ObservableObject {
     
     @Published var products: [ProductModel] = []
-    @Published var isSearching = false
-    @Published var showingFavs = false
+    @Published var message = "Shopping list is empty"
+    @Published var isSearching = true
+    @Published var isSubmitting = false
     @Published var savedItems: Set<Int> = []
 
     @MainActor
@@ -24,6 +25,7 @@ class ShoppingViewModel: ObservableObject {
     }
     
     func storeData(){
+        isSubmitting = true
         let items: [[String: Int]] = CartItem.cartItems.map{$0.dictionaryRepresentation}
         let parameters: [String: Any] = ["products": items]
         
@@ -34,7 +36,9 @@ class ShoppingViewModel: ObservableObject {
                 self?.savedItems = []
                 self?.products = []
                 self?.db.resetDefaults()
+                self?.message = "Your items submitted succesfully"
             }
+            self?.isSubmitting = false
         }
         
         
@@ -58,12 +62,6 @@ class ShoppingViewModel: ObservableObject {
         
     }
     
-    var filteredItems: [ProductModel]  {
-        if showingFavs {
-            return products.filter { savedItems.contains($0.id) }
-        }
-        return products
-    }
     
     private var db = Database()
 
